@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BlogEngine.Data.Repository.Classes;
+using BlogEngine.Entity;
+using BlogEngine.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +26,29 @@ namespace BlogEngine.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(Login login)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Registration()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Registration(LoginUserViewModel lu)
+        {
+
 
             return View();
         }
