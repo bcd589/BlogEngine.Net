@@ -13,12 +13,13 @@ namespace BlogEngine.Data.Repository.Classes
     {
         protected readonly DbContext Context;
 
+        internal BlogEngineDb BlogEngineDb => Context as BlogEngineDb;
+
+
         public Repository(DbContext context)
         {
             Context = context;
         }
-
-        internal BlogEngineDb BlogEngineDb => Context as BlogEngineDb;
 
         public TEntity Get(int id)
         {

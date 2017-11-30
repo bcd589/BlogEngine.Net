@@ -10,6 +10,7 @@ namespace BlogEngine.Data.Repository.Classes
         public BlogCatagoryRepository(DbContext context) : base(context)
         {
         }
+        
 
         public BlogCatagory GetBuyUrl(string url)
         {

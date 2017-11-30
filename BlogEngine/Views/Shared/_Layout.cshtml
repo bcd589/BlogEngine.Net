@@ -20,11 +20,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class=@(@ViewBag.SelectedMenu == "home" ? "active" : "")>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class=@(@ViewBag.SelectedMenu == "about" ? "active" : "")>@Html.ActionLink("About", "About", "Home")</li>
-                    <li class=@(@ViewBag.SelectedMenu == "contact" ? "active" : "")>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class=@(@ViewBag.SelectedMenu == "registration" ? "active" : "")>@Html.ActionLink("Sign Up", "Registration", "Home")</li>
-                    <li class=@(@ViewBag.SelectedMenu == "login" ? "active" : "")>@Html.ActionLink("Sign In", "Login", "Home")</li>
+                    <li class=@(@ViewBag.SelectedMenu == "home" ? "active" : "" ) nav ul li:first-child>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class=@(@ViewBag.SelectedMenu == "about" ? "active" : "") nav ul li:first-child { float: left; }>@Html.ActionLink("About", "About", "Home")</li>
+                    <li class=@(@ViewBag.SelectedMenu == "contact" ? "active" : "") nav ul li:first-child { float: left; }>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class=@(@ViewBag.SelectedMenu == "registration" ? "active" : "") nav ul li { float: left; }>@Html.ActionLink("Sign Up", "Registration", "Home")</li>
+                    <li class=@(@ViewBag.SelectedMenu == "login" ? "active" : "") nav ul li { float: left; }>@Html.ActionLink("Sign In", "Login", "Home")</li>
                 </ul>
             </div>
         </div>

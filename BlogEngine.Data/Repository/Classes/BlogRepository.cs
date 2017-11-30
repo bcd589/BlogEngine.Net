@@ -11,7 +11,6 @@ namespace BlogEngine.Data.Repository.Classes
         {
         }
 
-
         public Blog GetBuyUrl(string url)
         {
             Blog blog = BlogEngineDb.Blogs.SingleOrDefault(b => b.Url == url) as Blog;

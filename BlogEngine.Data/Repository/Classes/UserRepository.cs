@@ -6,13 +6,12 @@ using System.Linq;
 
 namespace BlogEngine.Data.Repository.Classes
 {
-    class UserRepository : Repository<User>, IUserRepository
+    public class UserRepository : Repository<User>, IUserRepository
     {
         public UserRepository(DbContext context) : base(context)
         {
         }
-
-
+        
 
         public User GetByUrl(string url)
         {
