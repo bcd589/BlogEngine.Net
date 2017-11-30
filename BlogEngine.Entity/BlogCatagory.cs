@@ -13,7 +13,7 @@ namespace BlogEngine.Entity
 
         public string Url { get; set; }
 
-        public string Content { get; set; }
+        public string Destription { get; set; }
         public string Title { get; set; }
 
         public virtual ICollection<Blog> Blogs { get; set; }

@@ -1,10 +1,5 @@
-﻿using BlogEngine.Data.Repository.Classes;
-using BlogEngine.Entity;
+﻿using BlogEngine.Entity;
 using BlogEngine.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BlogEngine.Controllers
@@ -37,6 +32,11 @@ namespace BlogEngine.Controllers
         [HttpPost]
         public ActionResult Login(Login login)
         {
+            if(ModelState.IsValid)
+            {
+                
+            }
+
             return View();
         }
 

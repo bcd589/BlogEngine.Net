@@ -11,13 +11,10 @@ namespace BlogEngine.Data.Repository.Classes
 {
     public class LoginRepository : Repository<Login>, ILoginRepository
     {
-        public LoginRepository(DbContext context) : base(context)
-        {
-        }
 
         public Login GetLoginByUsernameAndPassword(string username, string password)
         {
-            Login login = BlogEngineDb.Logins
+            Login login = Context.Logins
                 .SingleOrDefault(l => l.Username == username && l.Password == password);
 
             return login;
@@ -27,9 +24,9 @@ namespace BlogEngine.Data.Repository.Classes
         {
             List<Blog> blogs = new List<Blog>();
 
-            User user = BlogEngineDb.Users.SingleOrDefault(u => u.Login.Username == url);
+            User user = Context.Users.SingleOrDefault(u => u.Login.Username == url);
 
-            blogs = BlogEngineDb.Blogs.Where(b => b.User == user).ToList();
+            blogs = Context.Blogs.Where(b => b.User == user).ToList();
 
             return blogs;
         }

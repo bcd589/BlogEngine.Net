@@ -11,20 +11,15 @@ namespace BlogEngine.Data.Repository.Classes
 {
     public class CommentRepository : Repository<Comment>, ICommentRepository
     {
-        public CommentRepository(DbContext context) : base(context)
-        {
-
-        }
-
         public ICollection<Comment> GetCommentsByBlog(Blog blog)
         {
-            List<Comment> comments = BlogEngineDb.Comments.Include(c => c.Blog == blog).ToList();
+            List<Comment> comments = Context.Comments.Include(c => c.Blog == blog).ToList();
             return comments ?? null;
         }
 
         public ICollection<Comment> GetCommentsByBlog(int blogId)
         {
-            List<Comment> comments = BlogEngineDb.Comments.Include(c => c.BlogId == blogId).ToList();
+            List<Comment> comments = Context.Comments.Include(c => c.BlogId == blogId).ToList();
             return comments ?? null;
         }
     }

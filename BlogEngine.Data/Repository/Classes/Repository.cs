@@ -11,15 +11,8 @@ namespace BlogEngine.Data.Repository.Classes
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly DbContext Context;
+        internal readonly BlogEngineDb Context = new BlogEngineDb();
 
-        internal BlogEngineDb BlogEngineDb => Context as BlogEngineDb;
-
-
-        public Repository(DbContext context)
-        {
-            Context = context;
-        }
 
         public TEntity Get(int id)
         {

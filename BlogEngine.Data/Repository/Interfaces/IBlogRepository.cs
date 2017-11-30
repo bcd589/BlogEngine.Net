@@ -10,5 +10,6 @@ namespace BlogEngine.Data.Repository.Interfaces
     public interface IBlogRepository : IRepository<Blog>
     {
         Blog GetBuyUrl(string url);
+        IList<Blog> GetAllWithDependency();
     }
 }

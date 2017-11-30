@@ -11,13 +11,10 @@ namespace BlogEngine.Data.Repository.Classes
 {
     public class BlogTypeRepository : Repository<BlogType>, IBlogTypeRepository
     {
-        public BlogTypeRepository(DbContext context) : base(context)
-        {
-        }
 
         public BlogType GetByUrl(string url)
         {
-            BlogType blogType = BlogEngineDb.BlogTypes.Include(bt => bt.Blogs).SingleOrDefault(bt => bt.Url == url);
+            BlogType blogType = Context.BlogTypes.Include(bt => bt.Blogs).SingleOrDefault(bt => bt.Url == url);
             return blogType;
         }
     }

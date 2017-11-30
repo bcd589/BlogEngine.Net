@@ -11,8 +11,5 @@ namespace BlogEngine.Data.Repository.Classes
 {
     public class RoleRepository : Repository<Role>, IRoleRepository
     {
-        public RoleRepository(DbContext context) : base(context)
-        {
-        }
     }
 }

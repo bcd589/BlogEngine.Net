@@ -10,5 +10,6 @@ namespace BlogEngine.Data.Repository.Interfaces
     public interface IUserRepository : IRepository<User>
     {
         User GetByUrl(string url);
+        User GetByLogin(int loginId);
     }
 }

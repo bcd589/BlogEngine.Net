@@ -11,9 +11,5 @@ namespace BlogEngine.Data.Repository.Classes
 {
     public class PermissionRepository : Repository<Permission>, IPermissionRepository
     {
-        public PermissionRepository(DbContext context) : base(context)
-        {
-        }
-
     }
 }

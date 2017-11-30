@@ -7,14 +7,11 @@ namespace BlogEngine.Data.Repository.Classes
 {
     public class BlogCatagoryRepository : Repository<BlogCatagory>, IBlogCatagoryRepository
     {
-        public BlogCatagoryRepository(DbContext context) : base(context)
-        {
-        }
         
 
         public BlogCatagory GetBuyUrl(string url)
         {
-            BlogCatagory blogCatagory = BlogEngineDb.BlogCatagories.Include(bc => bc.Blogs)
+            BlogCatagory blogCatagory = Context.BlogCatagories.Include(bc => bc.Blogs)
                 .SingleOrDefault(bc => bc.Url == url);
             return blogCatagory;
         }
